@@ -7,21 +7,21 @@
   <body>
     <h2>Underconstraint - a great win of declarative modeling</h2>
 
-<p> When you haven't written enough constraints, and are allow absurd
-    solutions which shouldn't even be considered, then you are facing
-    a problem of underconsrtaint.  This kind of bug is actually pretty
+<p> When you haven't written enough constraints, you allow absurd
+    solutions which shouldn't have been allowed. This is the
+    problem of underconsrtaint.  This kind of bug is actually pretty
     easy to catch.  You'll spot it when you get a bogus
     counterexample; one that shouldn't exist at all, and thus isn't a
-    legitimate counterexample.  Look at it and formulate <i>why</i> it
+    legitimate example.  Look at it and formulate <i>why</i> it
     is ill-formed, then simply add a constraint to prevent solutions
     of that form.  However, make sure that the situation can't
     actually occur in the system you are modeling, and be wary of
     ruling out desirable solutions in your effort to prevent the bad
-    one that you have found.</p>
+    one that you have found.(ie. avoid overconstraining)</p>
 
-<p> You can use the <a href="sidenote-format-run.html"> <b><tt>run</b></tt> command help identify
-    underconstraints</a>.</p>
-
+<p> You can use the <a href="sidenote-format-run.html"> <b><tt>run</b></tt></a> command to help identify
+    underconstraints from examples .</p>
+<p> You can also use the <a href="https://alloytools.org/tutorials/online/sidenote-format-check.html">check</a> command on assertions to check that no wrong examples (counterexamples) exist.</p>
 <p> The other side of the coin is <a href="sidenote-overconstraint.html">overconstraint</a>.</p>
 
   </body>
