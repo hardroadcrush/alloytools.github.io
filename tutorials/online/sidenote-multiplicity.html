@@ -7,7 +7,7 @@
   <body>
     <h2>Multiplicity Markings</h2>
 
-<p>When defining a field of a signature to be a relation, you write something like this:</p>
+<p>When defining a field of a signature to be a relation in itself as well , you write something like this:</p>
 
 <pre><b>
   sig University {
@@ -15,11 +15,11 @@
   }
 </b></pre>
 
-<p> Here, each University knows which student is a member of which
-    professor's research group.  That is, there is a relation from
-    Universities to Students to Professors.  By writing multiplicity
-    markings to the declaration of the relation, we can add additional
-    constraints in a concise way.  For example, </p>
+<p> Here, there is a (nameless) relation from Students to Professors, which is
+  in turn related to some university through the relation <i>groupMember</i>.
+
+  By writing multiplicity markings to the declaration of the relation, 
+  we can add additional constraints in a concise way.  For example, </p>
 
 <pre><b>
   sig University {
@@ -27,7 +27,7 @@
   }
 </b></pre>
 
-<p> means that each student is in exactly one professor's research
+<p> means that each student is in exactly <b>one</b> professor's research
     group. If we instead wrote this,</p>
 
 <pre><b>
@@ -36,8 +36,8 @@
   }
 </b></pre>
 
-<p> Then we are saying that some students may be in no research group,
-but no student is in more than one. Lastly, we can write</p>
+<p> Then we are saying that every student is studying (related) with at most
+  one professor. Lastly, we can write</p>
 
 <pre><b>
   sig University {
@@ -45,8 +45,10 @@ but no student is in more than one. Lastly, we can write</p>
   }
 </b></pre>
 
-<p> to say that each student is in one or more research groups.  When
-    no multiplicity markings are present, there are not
+<p> to say that each student is in one or more research groups (since the student
+    can be related with <i>some</i> ie. one or more professors.  
+    
+    When no multiplicity markings are present, there are no
     constraints.</p>
 
 <hr WIDTH="50%">
