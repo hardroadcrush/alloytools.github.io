@@ -40,9 +40,9 @@
     you might describe the procedure a company uses to reroute mail
     internally, add some constraints about how the mail carriers
     behave, and then check to see if each piece of mail either gets to
-    its destination or returned to sender.  Your modeling tool (in
+    it's destination or is returned to the sender.  Your modeling tool (in
     this case, Alloy), would then either say "this property always
-    holds for problems up to size X" or "this property does not always
+    holds for problems (up to size X)" or "this property does not always
     hold, and here is a counter example".
 
 <p> There are two kinds of problems that can arise:
@@ -67,11 +67,10 @@
      misses a counterexample which is smaller than the specified
      scope.  Small scope checks are still extremely valuable for
      finding errors.
-<li> <b>infinite model</b> - The models you write in Alloy do not
-     reflect the fact that the analysis is finite.  That is, you
-     describe the compontents of a system and how they interact, but
-     do not specify how many components there can be (as is done in
-     traditional "model checking").
+<li> <b>infinite model</b> - While the scope of how many signatures 
+      is finite, the general model you describe is independent of
+      such constraints. The scope is only specified for checking 
+      <b>upon</b> the general model.
 <li> <a href="sidenote-operational-declarative.html" target="sidenote"> <b>declarative</b></a>
      - a declarative modeler answers the question
      "how would I recognize that X has happened", as opposed to an
@@ -93,8 +92,8 @@
 
 <p> We begin our tutorial with a simple model of a file system.  It
     has a notion of a "file system object" which can be either a file
-    or a directory.  Every file system object knows its parent, and
-    directories also know their contents.  We will also create the
+    or a directory.  Every file system object knows it's parent, and
+    directories also know their <b>direct</b> contents.  We will also create the
     notion of a "root directory", which resides at the top of the file
     system.
 
@@ -122,9 +121,9 @@
     prominently, it will be static.  In the following lessons, we will
     introduce dynamic operations, such as move and delete.
 
-<p> By the end of the first lesson, you will have written a simple
-    static file system, constrained it to exclude ill-formed
-    file-systems, and verified some properties about it.
+<p> By the end of the first lesson, you will have ;written a simple
+    static file system; constrained it to exclude ill-formed
+    file-systems and verified some properties about it.
 
 
 <hr WIDTH="100%"> <a href="index.html" target="_top">back</a> <a href="frame-FS-1.html" target="_top">next</a>
