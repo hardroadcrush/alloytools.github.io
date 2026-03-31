@@ -9,43 +9,51 @@
     <h2>File System Model (I)</h2>
 
 <pre>
-<i>// A file system object in the file system</i>
+// A file system object type in the file system called <i>FSObject</i>.
+// It has an attribute called <i>parent</i> that contains either
+// zero or one <i>Dir</i>.
 <b>sig FSObject { parent: lone Dir }</b>
 
-<i>// A directory in the file system</i>
+//<i>Dir</i> represents a directory in the file system
+//It has all the attributes of <i>FSObject</i> as well since it is 
+//extended from it.
 <b>sig Dir extends FSObject { contents: set FSObject }</b>
 
-<i>// A file in the file system</i>
+//<i>File</i> represents a file in the file system</i>
+//It has all the attributes of <i>FSObject</i> as well since it is 
+//extended from it.
 <b>sig File extends FSObject { }</b>
 
-<i>// A directory is the parent of its contents</i>
+// Every directory is the parent of its contents
 <b>fact { all d: Dir, o: d.contents | o.parent = d }</b>
 
-<i>// All file system objects are either files or directories</i>
+// All file system objects are either files or directories
 <b>fact { File + Dir = FSObject }</b>
 
-<i>// There exists a root</i>
+// There exists one root directory
 <b>one sig Root extends Dir { } { no parent }</b>
 
-<i>// File system is connected</i>
+// File system is connected
 <b>fact { FSObject in Root.*contents }</b>
 
-<i>// The contents path is acyclic</i>
+// an assertion that every path in the contents subtree of
+// every directory is acyclic
 <b>assert acyclic { no d: Dir | d in d.^contents }</b>
 
-<i>// Now check it for a scope of 5</i>
+// Now check the assertion for a maximum scope of 
+// 5 instances of each signature
 <b>check acyclic for 5</b>
 
-<i>// File system has one root</i>
+// assertion that the file system has one root
 <b>assert oneRoot { one d: Dir | no d.parent }</b>
 
-<i>// Now check it for a scope of 5</i>
+// Now check it for a scope of 5
 <b>check oneRoot for 5</b>
 
-<i>// Every fs object is in at most one directory</i>
+// Every file system object is in at most one directory
 <b>assert oneLocation { all o: FSObject | lone d: Dir | o in d.contents }</b>
 
-<i>// Now check it for a scope of 5</i>
+// Now check this assertion for a scope of 5
 <b>check oneLocation for 5</b>
 </pre>
 
