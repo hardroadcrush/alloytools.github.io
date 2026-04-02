@@ -52,7 +52,22 @@ Alloy model.
   so
 <li> <b><tt>s.F</b></tt> returns something of type <b><tt>T</b></tt>
 </ul>
+<hr WIDTH="50%">
+<p> The way to understand it in terms of set theory is as follows:
+    S is a set containing elements of a particular type
+    E is also a set containing elements of a particular type
+    F is a set that contains tuples of (S1->E1) where
+      S1 is an element from set S,
+      E1 is an element from set E,
+      -> is the relational operator
 
+    Think of the dot operator now in terms of sets;
+    S1.F would result in S1 being matched with every tuple in F and
+    the resulting set would contain only the elements of type T that
+    are related to S1.
+
+</p>
+    
 <hr WIDTH="50%">
 
 <p> The fragment can be safely read as being about sets, elements, and
