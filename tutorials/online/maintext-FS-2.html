@@ -15,7 +15,7 @@
 
 <p> In this lesson, we take a look at the <i>Alloy</i> interface
     itself.  We will walkthrough the basics of how to execute a
-    command to check an <i>Alloy</i> model and how to interpret the
+    command, check an <i>Alloy</i> model for correctness and interpret the
     results.  We will continue to use our running sample model of a
     File system, and execute the <a href="sidenote-format-check.html"
     target="sidenote"> <b><tt>check</tt></b></a> statements to verify
@@ -33,9 +33,10 @@
     However, the basics of using the <i>Alloy</i> interface (what you
     can tell <i>Alloy</i> to do, the terminology we use, and the kind
     of information Alloy returns) remains constant.  This walkthrough
-    analyzes our File System example, and to show examples of what the resulting output and
-    visualizations might look like. If you need additional help, or to report/clarify an
-    inconsistency, feel free to contact us.</p>
+    analyzes our File System example, and to show examples of what the 
+    resulting output and  visualizations might look like. If you need 
+    additional help, or to report/clarify an inconsistency, feel free 
+    to contact us.</p>
 
 <hr WIDTH="50%">
 
@@ -52,8 +53,8 @@
 <p><IMG SRC="alloy-blank.gif" BORDER=0></p>
 
 <ul>
-<li> <b>Create a new model</b> by pasting in our current model (shown to
-     the right of this window), and <b>save</b> it as
+<li> <b>Create a new model</b> by pasting in our current model (shown 
+      to the right of this window), and <b>save</b> it as
      '<tt>fileSystem.als</tt>'</li>
 <li> <b>Select a command to execute</b> by choosing one from the
      '<tt>Execute</tt>' menu the menu bar.  There will be
@@ -65,13 +66,14 @@
      menu.  You will be told "<i>no counterexample found. Assertion may
      be valid.</i>", meaning that there are no counter examples
      to the <b><tt>acyclic</tt></b> assertion within a scope of 5.
-     Had there been solutions, you can click on message and display one such solution
-     in a new visualizer window.</li>
+     Had there been solutions, you can click on message and display one 
+     such solution in a new visualizer window.</li>
 <li> Now let's <b>check the second command</b> the same way.  Select
      the second command ("<b><tt>check oneRoot for 5</tt></b>") from
      the <tt>Execute</tt> menu, and execute it.  There are no
      solutions found for this one either.</li>
-<li> Finally, <b>check the third command</b> the same way. There are n osolutions found for this one either.</li>
+<li> Finally, <b>check the third command</b> the same way. 
+     There are no solutions found for this one either.</li>
 </ul>
 
 <p>    <IMG SRC="alloy-msg.gif" BORDER=1></p>
@@ -80,9 +82,9 @@
 
 <p> In general, once you make a change to the model and want to see
     its effect on a <b><tt>run</tt></b> or a <tt><b>check</b></tt>,
-    just execute that command again.  You do not need to click <b><tt>save</tt></b> first, since
-    the Alloy Analyzer will always use the text editor's version rather than
-    the version on disk.</p>
+    just execute that command again.  You do not need to click <b><tt>save</tt></b> first, 
+    since the Alloy Analyzer will always use the text editor's version 
+    rather than the version on disk.</p>
 
 <p> We'll see an example of visualizing a solution next.</p>
 
@@ -131,8 +133,8 @@
 <p> You can make the visualization more readable by customizing the
     layout. You do this by clicking the "Theme" button from the toolbar.  You
     can adjust what relations and sets are shown, and the style of
-    their presentation.  Here is a cleaner customization by clicking on the "contents"
-    relationship and setting its "Show as Arc" checkbox to false.</p>
+    their presentation.  Here is a cleaner customization by clicking 
+    on the "contents" relationship and setting its "Show as Arc" checkbox to false.</p>
 
 <p>    <IMG SRC="alloy-pic3.png" BORDER=0></p>
 
@@ -161,7 +163,8 @@ We might get a solution such as this one:
 
 <p>    <IMG SRC="alloy-pic4.png" BORDER=0></p>
 
-<p> Or, with some minor customizations (by setting Dir to be blue parallelograms), we get the much more readable:</p>
+<p> Or, with some minor customizations (by setting Dir to be blue
+    parallelograms), we get the much more readable:</p>
 
 <p>    <IMG SRC="alloy-pic5.png" BORDER=0></p>
 
